@@ -19,4 +19,6 @@ namespace GTDエディタ
             Application.Run(new Form1());
         }
     }
+
+
 }
