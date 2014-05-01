@@ -13,11 +13,11 @@ namespace GTDエディタ
 {
     public partial class Form1 : Form
     {
-        const int 魔法数 = 60;
+        const int 魔法数 = 80;//共通20 + 専用 5×12
+        const int Box位置X = 236;
+        const int Box間隔 = 52;
         string fileName = "\\data.txt";
         FileStream file;
-
-        const string test = "あい123";
 
         int index = 0;
         int copy_index = -1;//コピー元のインデックス
@@ -60,7 +60,7 @@ namespace GTDエディタ
 
             for (int i = 0; i < 66; ++i )
             {
-                x = 170 +i%6 * 52;
+                x = Box位置X + i % 6 * Box間隔;
                 if (i == 6 * 4) y = 290;
                 if (i == 6 * 6) y = 348;
                 if (i == 6 * 8) y = 434;
@@ -69,6 +69,7 @@ namespace GTDエディタ
                 BoxBuff[i].Size = new Size(44, 19);
  
                 BoxBuff[i].Location = new Point( x , y );
+
                 Controls.Add(BoxBuff[i]);
                 if (i % 6 == 5) y += 25;
             }
@@ -81,8 +82,8 @@ namespace GTDエディタ
                 DPS表示[i].Size = new Size(44, 19);
                 DPC表示[i].Size = new Size(44, 19);
 
-                DPS表示[i].Location = new Point(172 + i*52, 520);
-                DPC表示[i].Location = new Point(172 + i*52, 547);
+                DPS表示[i].Location = new Point(Box位置X + i * Box間隔, 520);
+                DPC表示[i].Location = new Point(Box位置X + i * Box間隔, 547);
 
                 Controls.Add(DPS表示[i]);
                 Controls.Add(DPC表示[i]);
@@ -107,10 +108,17 @@ namespace GTDエディタ
 
             for (int i = 0; i < 魔法数; ++i)
             {
-                listBox.Items.Add( i + ":" + MagicS[i].名前);
+                if (i % 5 == 0) listBox.Items.Add( "●" + MagicS[i].名前);
+                else listBox.Items.Add( MagicS[i].名前);
             }
 
             UpdateBox();
+
+            for (int i = 0; i < 66; ++i)
+            {
+                BoxBuff[i].TextChanged += new EventHandler(ChangeDPS);
+            }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -119,8 +127,42 @@ namespace GTDエディタ
             
         }
 
+        void ChangeDPS(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 6; ++i)
+            {
+                double dps = int.Parse(攻撃力Box[i].Text) * int.Parse(速度Box[i].Text) * int.Parse(Hit数Box[i].Text) / 100;
+                double cost = double.Parse(コストBox[i].Text);
+                double dpc = dps / cost;
+
+                DPS表示[i].Text = dps.ToString("F0");
+                DPC表示[i].Text = dpc.ToString("F2");
+            }
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // Ctrl + V をボタンのショートカットキーとして処理する
+            if ((int)keyData == (int)Keys.Control + (int)Keys.V)
+            {
+                this.PasteButton.PerformClick();
+                return true;
+            }
+
+            // Ctrl + C をボタンのショートカットキーとして処理する
+            if ((int)keyData == (int)Keys.Control + (int)Keys.C)
+            {
+                this.CopyButton.PerformClick();
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBox.SelectedIndex < 0) return;
+
             UpdateData();
             index = listBox.SelectedIndex;
             UpdateBox();
@@ -140,6 +182,12 @@ namespace GTDエディタ
         {
             MagicS[index].Copy(MagicS[copy_index]);
             UpdateBox();
+
+            for (int i = 0; i < 魔法数; ++i)
+            {
+                if (i % 5 == 0) listBox.Items[i] = "●" + MagicS[i].名前;
+                else listBox.Items[i] = MagicS[i].名前;
+            }
         }
 
         private void UpdateData()
@@ -200,14 +248,20 @@ namespace GTDエディタ
                 double dps = MagicS[index].攻撃力[i] * MagicS[index].速度[i] * MagicS[index].Hit数[i];
                 double dpc = dps / MagicS[index].コスト[i];
 
-                DPS表示[i].Text = dps.ToString();
-                DPC表示[i].Text = dpc.ToString();
+                DPS表示[i].Text = dps.ToString("F0");
+                DPC表示[i].Text = dpc.ToString("F2");
             }
 
         }
 
         private void DataLoad()
         {
+            if( !System.IO.File.Exists(fileName) )
+            {
+                //ファイルがないなら読み込まない
+                return;
+            }
+
             file = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Read);
 
             for (int i = 0; i < 魔法数; ++i)
@@ -246,6 +300,9 @@ namespace GTDエディタ
 
             for (int i = 0; i < 魔法数;++i )
             {
+                if (i % 5 == 0) listBox.Items[i] = "●" + MagicS[i].名前;
+                else            listBox.Items[i] = MagicS[i].名前;
+
                 SaveString(MagicS[i].名前);
                 SaveString(MagicS[i].説明);
                 SaveInt(MagicS[i].属性);
@@ -270,6 +327,7 @@ namespace GTDエディタ
             }
 
             file.Close();
+
         }
         
         private void SaveString(string 文字列)

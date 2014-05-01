@@ -79,7 +79,7 @@
             // 
             // CopyButton
             // 
-            this.CopyButton.Location = new System.Drawing.Point(307, 12);
+            this.CopyButton.Location = new System.Drawing.Point(373, 12);
             this.CopyButton.Name = "CopyButton";
             this.CopyButton.Size = new System.Drawing.Size(75, 23);
             this.CopyButton.TabIndex = 2;
@@ -89,7 +89,7 @@
             // 
             // PasteButton
             // 
-            this.PasteButton.Location = new System.Drawing.Point(388, 12);
+            this.PasteButton.Location = new System.Drawing.Point(454, 12);
             this.PasteButton.Name = "PasteButton";
             this.PasteButton.Size = new System.Drawing.Size(75, 23);
             this.PasteButton.TabIndex = 3;
@@ -103,7 +103,7 @@
             this.listBox.ItemHeight = 12;
             this.listBox.Location = new System.Drawing.Point(12, 41);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(93, 532);
+            this.listBox.Size = new System.Drawing.Size(150, 520);
             this.listBox.TabIndex = 4;
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
@@ -114,9 +114,9 @@
             "炎",
             "氷",
             "樹",
-            "風",
+            "空",
             "無"});
-            this.属性Box.Location = new System.Drawing.Point(170, 110);
+            this.属性Box.Location = new System.Drawing.Point(236, 110);
             this.属性Box.Name = "属性Box";
             this.属性Box.Size = new System.Drawing.Size(121, 20);
             this.属性Box.TabIndex = 9;
@@ -124,7 +124,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 113);
+            this.label3.Location = new System.Drawing.Point(177, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 10;
@@ -133,7 +133,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(111, 139);
+            this.label4.Location = new System.Drawing.Point(177, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 12;
@@ -147,14 +147,14 @@
             "対地専用",
             "対空専用",
             "使い捨て"});
-            this.種類Box.Location = new System.Drawing.Point(170, 136);
+            this.種類Box.Location = new System.Drawing.Point(236, 136);
             this.種類Box.Name = "種類Box";
             this.種類Box.Size = new System.Drawing.Size(121, 20);
             this.種類Box.TabIndex = 11;
             // 
             // 判定Box
             // 
-            this.判定Box.Location = new System.Drawing.Point(360, 110);
+            this.判定Box.Location = new System.Drawing.Point(426, 110);
             this.判定Box.Name = "判定Box";
             this.判定Box.Size = new System.Drawing.Size(121, 19);
             this.判定Box.TabIndex = 14;
@@ -162,7 +162,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(314, 113);
+            this.label5.Location = new System.Drawing.Point(380, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 13;
@@ -171,7 +171,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(110, 184);
+            this.label6.Location = new System.Drawing.Point(176, 184);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 12);
             this.label6.TabIndex = 16;
@@ -180,7 +180,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(178, 166);
+            this.label7.Location = new System.Drawing.Point(244, 166);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(25, 12);
             this.label7.TabIndex = 17;
@@ -189,7 +189,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(110, 209);
+            this.label8.Location = new System.Drawing.Point(176, 209);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 12);
             this.label8.TabIndex = 19;
@@ -198,7 +198,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(110, 234);
+            this.label9.Location = new System.Drawing.Point(176, 234);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 21;
@@ -207,7 +207,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(110, 259);
+            this.label10.Location = new System.Drawing.Point(176, 259);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 23;
@@ -216,7 +216,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(110, 293);
+            this.label11.Location = new System.Drawing.Point(176, 293);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 25;
@@ -225,7 +225,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(110, 318);
+            this.label12.Location = new System.Drawing.Point(176, 318);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 12);
             this.label12.TabIndex = 27;
@@ -234,7 +234,7 @@
             // 爆発
             // 
             this.爆発.AutoSize = true;
-            this.爆発.Location = new System.Drawing.Point(110, 351);
+            this.爆発.Location = new System.Drawing.Point(176, 351);
             this.爆発.Name = "爆発";
             this.爆発.Size = new System.Drawing.Size(53, 12);
             this.爆発.TabIndex = 29;
@@ -243,7 +243,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(110, 376);
+            this.label14.Location = new System.Drawing.Point(176, 376);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 31;
@@ -252,7 +252,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(110, 437);
+            this.label15.Location = new System.Drawing.Point(176, 437);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 12);
             this.label15.TabIndex = 33;
@@ -261,7 +261,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(110, 462);
+            this.label16.Location = new System.Drawing.Point(176, 462);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(41, 12);
             this.label16.TabIndex = 35;
@@ -269,7 +269,7 @@
             // 
             // 詠唱数Box
             // 
-            this.詠唱数Box.Location = new System.Drawing.Point(360, 137);
+            this.詠唱数Box.Location = new System.Drawing.Point(426, 137);
             this.詠唱数Box.Name = "詠唱数Box";
             this.詠唱数Box.Size = new System.Drawing.Size(121, 19);
             this.詠唱数Box.TabIndex = 37;
@@ -277,7 +277,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(314, 140);
+            this.label17.Location = new System.Drawing.Point(380, 140);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 12);
             this.label17.TabIndex = 36;
@@ -286,7 +286,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(110, 487);
+            this.label18.Location = new System.Drawing.Point(176, 487);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(32, 12);
             this.label18.TabIndex = 39;
@@ -295,7 +295,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(111, 411);
+            this.label19.Location = new System.Drawing.Point(177, 411);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(53, 12);
             this.label19.TabIndex = 41;
@@ -305,12 +305,13 @@
             // 
             this.追加効果Box.FormattingEnabled = true;
             this.追加効果Box.Items.AddRange(new object[] {
-            "麻痺",
+            "パニック",
             "眠り",
-            "炎上",
+            "痺れ",
             "吹き飛ばし",
-            "防御低下"});
-            this.追加効果Box.Location = new System.Drawing.Point(170, 408);
+            "防御低下",
+            "無し"});
+            this.追加効果Box.Location = new System.Drawing.Point(236, 408);
             this.追加効果Box.Name = "追加効果Box";
             this.追加効果Box.Size = new System.Drawing.Size(121, 20);
             this.追加効果Box.TabIndex = 40;
@@ -318,7 +319,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(111, 520);
+            this.label20.Location = new System.Drawing.Point(177, 520);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(27, 12);
             this.label20.TabIndex = 42;
@@ -327,7 +328,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(111, 547);
+            this.label21.Location = new System.Drawing.Point(177, 547);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(28, 12);
             this.label21.TabIndex = 43;
@@ -336,7 +337,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(220, 166);
+            this.label24.Location = new System.Drawing.Point(286, 166);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(25, 12);
             this.label24.TabIndex = 47;
@@ -345,7 +346,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(272, 166);
+            this.label25.Location = new System.Drawing.Point(338, 166);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(25, 12);
             this.label25.TabIndex = 56;
@@ -354,7 +355,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(323, 166);
+            this.label26.Location = new System.Drawing.Point(389, 166);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(25, 12);
             this.label26.TabIndex = 65;
@@ -363,7 +364,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(375, 166);
+            this.label27.Location = new System.Drawing.Point(441, 166);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(25, 12);
             this.label27.TabIndex = 74;
@@ -372,7 +373,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(427, 166);
+            this.label28.Location = new System.Drawing.Point(493, 166);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(25, 12);
             this.label28.TabIndex = 83;
@@ -381,7 +382,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(111, 41);
+            this.label1.Location = new System.Drawing.Point(177, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 5;
@@ -390,7 +391,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 66);
+            this.label2.Location = new System.Drawing.Point(177, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 7;
@@ -398,14 +399,15 @@
             // 
             // 名前Box
             // 
-            this.名前Box.Location = new System.Drawing.Point(170, 38);
+            this.名前Box.Location = new System.Drawing.Point(236, 38);
             this.名前Box.Name = "名前Box";
             this.名前Box.Size = new System.Drawing.Size(121, 19);
             this.名前Box.TabIndex = 6;
             // 
             // 説明Box
             // 
-            this.説明Box.Location = new System.Drawing.Point(170, 63);
+            this.説明Box.AcceptsReturn = true;
+            this.説明Box.Location = new System.Drawing.Point(236, 63);
             this.説明Box.Multiline = true;
             this.説明Box.Name = "説明Box";
             this.説明Box.Size = new System.Drawing.Size(311, 41);
@@ -415,7 +417,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 583);
+            this.ClientSize = new System.Drawing.Size(566, 571);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);

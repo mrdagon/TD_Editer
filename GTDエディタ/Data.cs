@@ -24,7 +24,6 @@ namespace GTDエディタ
         public int 詠唱数 = 0;
         public int 追加効果 = 0;
 
-
         public 性能()
         {
             for(int i=0;i<6;++i)
