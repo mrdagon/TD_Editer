@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.種類Box = new System.Windows.Forms.ComboBox();
-            this.判定Box = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.詠唱数Box = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -65,6 +63,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.名前Box = new System.Windows.Forms.TextBox();
             this.説明Box = new System.Windows.Forms.TextBox();
+            this.判定Box = new System.Windows.Forms.ComboBox();
+            this.詠唱数Box = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.詠唱数Box)).BeginInit();
             this.SuspendLayout();
             // 
             // SaveButton
@@ -103,7 +105,7 @@
             this.listBox.ItemHeight = 12;
             this.listBox.Location = new System.Drawing.Point(12, 41);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(150, 520);
+            this.listBox.Size = new System.Drawing.Size(150, 556);
             this.listBox.TabIndex = 4;
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
@@ -141,23 +143,26 @@
             // 
             // 種類Box
             // 
+            this.種類Box.AutoCompleteCustomSource.AddRange(new string[] {
+            "両方",
+            "対地",
+            "対空",
+            "貫通",
+            "対地貫通",
+            "対空貫通",
+            "支援専用",
+            "使い捨て"});
             this.種類Box.FormattingEnabled = true;
             this.種類Box.Items.AddRange(new object[] {
             "両方OK",
             "対地専用",
             "対空専用",
-            "使い捨て"});
+            "使い捨て",
+            "支援専用"});
             this.種類Box.Location = new System.Drawing.Point(236, 136);
             this.種類Box.Name = "種類Box";
             this.種類Box.Size = new System.Drawing.Size(121, 20);
             this.種類Box.TabIndex = 11;
-            // 
-            // 判定Box
-            // 
-            this.判定Box.Location = new System.Drawing.Point(426, 110);
-            this.判定Box.Name = "判定Box";
-            this.判定Box.Size = new System.Drawing.Size(121, 19);
-            this.判定Box.TabIndex = 14;
             // 
             // label5
             // 
@@ -211,30 +216,30 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 23;
-            this.label10.Text = "速度";
+            this.label10.Text = "連射";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(176, 293);
+            this.label11.Location = new System.Drawing.Point(177, 316);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 25;
-            this.label11.Text = "支援効果";
+            this.label11.Text = "連射支援";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(176, 318);
+            this.label12.Location = new System.Drawing.Point(177, 341);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 12);
             this.label12.TabIndex = 27;
-            this.label12.Text = "支援範囲";
+            this.label12.Text = "射程支援";
             // 
             // 爆発
             // 
             this.爆発.AutoSize = true;
-            this.爆発.Location = new System.Drawing.Point(176, 351);
+            this.爆発.Location = new System.Drawing.Point(177, 374);
             this.爆発.Name = "爆発";
             this.爆発.Size = new System.Drawing.Size(53, 12);
             this.爆発.TabIndex = 29;
@@ -243,7 +248,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(176, 376);
+            this.label14.Location = new System.Drawing.Point(177, 399);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 31;
@@ -252,7 +257,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(176, 437);
+            this.label15.Location = new System.Drawing.Point(177, 460);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 12);
             this.label15.TabIndex = 33;
@@ -261,18 +266,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(176, 462);
+            this.label16.Location = new System.Drawing.Point(177, 485);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(41, 12);
             this.label16.TabIndex = 35;
             this.label16.Text = "発生率";
-            // 
-            // 詠唱数Box
-            // 
-            this.詠唱数Box.Location = new System.Drawing.Point(426, 137);
-            this.詠唱数Box.Name = "詠唱数Box";
-            this.詠唱数Box.Size = new System.Drawing.Size(121, 19);
-            this.詠唱数Box.TabIndex = 37;
             // 
             // label17
             // 
@@ -286,7 +284,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(176, 487);
+            this.label18.Location = new System.Drawing.Point(177, 510);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(32, 12);
             this.label18.TabIndex = 39;
@@ -295,7 +293,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(177, 411);
+            this.label19.Location = new System.Drawing.Point(178, 434);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(53, 12);
             this.label19.TabIndex = 41;
@@ -303,6 +301,12 @@
             // 
             // 追加効果Box
             // 
+            this.追加効果Box.AutoCompleteCustomSource.AddRange(new string[] {
+            "痺れ",
+            "眠り",
+            "吹き飛ばし",
+            "防御低下",
+            "無し"});
             this.追加効果Box.FormattingEnabled = true;
             this.追加効果Box.Items.AddRange(new object[] {
             "パニック",
@@ -311,7 +315,7 @@
             "吹き飛ばし",
             "防御低下",
             "無し"});
-            this.追加効果Box.Location = new System.Drawing.Point(236, 408);
+            this.追加効果Box.Location = new System.Drawing.Point(237, 431);
             this.追加効果Box.Name = "追加効果Box";
             this.追加効果Box.Size = new System.Drawing.Size(121, 20);
             this.追加効果Box.TabIndex = 40;
@@ -319,7 +323,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(177, 520);
+            this.label20.Location = new System.Drawing.Point(178, 543);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(27, 12);
             this.label20.TabIndex = 42;
@@ -328,7 +332,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(177, 547);
+            this.label21.Location = new System.Drawing.Point(178, 570);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(28, 12);
             this.label21.TabIndex = 43;
@@ -413,11 +417,43 @@
             this.説明Box.Size = new System.Drawing.Size(311, 41);
             this.説明Box.TabIndex = 8;
             // 
+            // 判定Box
+            // 
+            this.判定Box.FormattingEnabled = true;
+            this.判定Box.Items.AddRange(new object[] {
+            "円形",
+            "四角",
+            "十字-幅2",
+            "十字-幅4"});
+            this.判定Box.Location = new System.Drawing.Point(426, 111);
+            this.判定Box.Name = "判定Box";
+            this.判定Box.Size = new System.Drawing.Size(121, 20);
+            this.判定Box.TabIndex = 84;
+            // 
+            // 詠唱数Box
+            // 
+            this.詠唱数Box.Location = new System.Drawing.Point(427, 138);
+            this.詠唱数Box.Name = "詠唱数Box";
+            this.詠唱数Box.Size = new System.Drawing.Size(120, 19);
+            this.詠唱数Box.TabIndex = 85;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(176, 284);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(29, 12);
+            this.label13.TabIndex = 86;
+            this.label13.Text = "弾速";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 571);
+            this.ClientSize = new System.Drawing.Size(566, 608);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.詠唱数Box);
+            this.Controls.Add(this.判定Box);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);
@@ -428,7 +464,6 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.追加効果Box);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.詠唱数Box);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -441,7 +476,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.判定Box);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.種類Box);
@@ -458,6 +492,7 @@
             this.Name = "Form1";
             this.Text = "GTDエディタ";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.詠唱数Box)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,7 +508,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox 種類Box;
-        private System.Windows.Forms.TextBox 判定Box;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -486,7 +520,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox 詠唱数Box;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -502,6 +535,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox 名前Box;
         private System.Windows.Forms.TextBox 説明Box;
+        private System.Windows.Forms.ComboBox 判定Box;
+        private System.Windows.Forms.NumericUpDown 詠唱数Box;
+        private System.Windows.Forms.Label label13;
 
 
     }

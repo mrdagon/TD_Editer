@@ -24,22 +24,25 @@ namespace GTDエディタ
 
         性能[] MagicS = new 性能[魔法数];
 
-        TextBox[] コストBox = new TextBox[6];
-        TextBox[] 攻撃力Box = new TextBox[6];
-        TextBox[] 射程Box = new TextBox[6];
-        TextBox[] 速度Box = new TextBox[6];
+        NumBox[] コストBox = new NumBox[6];
+        NumBox[] 攻撃力Box = new NumBox[6];
+        NumBox[] 射程Box = new NumBox[6];
+        NumBox[] 連射Box = new NumBox[6];
+        NumBox[] 弾速Box = new NumBox[6];
 
-        TextBox[] 支援効果Box = new TextBox[6];
-        TextBox[] 支援範囲Box = new TextBox[6];
-        TextBox[] 爆発威力Box = new TextBox[6];
-        TextBox[] 爆発範囲Box = new TextBox[6];
+        NumBox[] 連射支援Box = new NumBox[6];
+        NumBox[] 射程支援Box = new NumBox[6];
+        NumBox[] 爆発威力Box = new NumBox[6];
+        NumBox[] 爆発範囲Box = new NumBox[6];
 
-        TextBox[] 効果量Box = new TextBox[6];
-        TextBox[] 発生率Box = new TextBox[6];
-        TextBox[] Hit数Box = new TextBox[6];
+        NumBox[] 効果量Box = new NumBox[6];
+        NumBox[] 発生率Box = new NumBox[6];
+        NumBox[] Hit数Box = new NumBox[6];
 
         Label[] DPS表示 = new Label[6];
         Label[] DPC表示 = new Label[6];
+
+        NumBox[] BoxBuff = new NumBox[6 * 12];
 
         public Form1()
         {
@@ -47,28 +50,28 @@ namespace GTDエディタ
 
             InitializeComponent();
 
-
             for(int i=0;i<魔法数;++i)
             {
                 MagicS[i] = new 性能();
             }
 
-            TextBox[] BoxBuff = new TextBox[6*11];
-
             int x = 0;
             int y = 181;
 
-            for (int i = 0; i < 66; ++i )
+            for (int i = 0; i < 6 * 12; ++i )
             {
                 x = Box位置X + i % 6 * Box間隔;
-                if (i == 6 * 4) y = 290;
-                if (i == 6 * 6) y = 348;
-                if (i == 6 * 8) y = 434;
+                if (i == 6 * 5) y = 316;
+                if (i == 6 * 7) y = 374;
+                if (i == 6 * 9) y = 460;
 
-                BoxBuff[i] = new TextBox();
+                BoxBuff[i] = new NumBox();
                 BoxBuff[i].Size = new Size(44, 19);
  
                 BoxBuff[i].Location = new Point( x , y );
+
+                BoxBuff[i].Maximum = 9999;
+                BoxBuff[i].Minimum = 0;
 
                 Controls.Add(BoxBuff[i]);
                 if (i % 6 == 5) y += 25;
@@ -82,8 +85,8 @@ namespace GTDエディタ
                 DPS表示[i].Size = new Size(44, 19);
                 DPC表示[i].Size = new Size(44, 19);
 
-                DPS表示[i].Location = new Point(Box位置X + i * Box間隔, 520);
-                DPC表示[i].Location = new Point(Box位置X + i * Box間隔, 547);
+                DPS表示[i].Location = new Point(Box位置X + i * Box間隔, 543);
+                DPC表示[i].Location = new Point(Box位置X + i * Box間隔, 570);
 
                 Controls.Add(DPS表示[i]);
                 Controls.Add(DPC表示[i]);
@@ -94,14 +97,15 @@ namespace GTDエディタ
                 コストBox[i] = BoxBuff[i + 6 * 0];
                 攻撃力Box[i] = BoxBuff[i + 6 * 1];
                 射程Box[i] = BoxBuff[i + 6 * 2];
-                速度Box[i] = BoxBuff[i + 6 * 3];
-                支援効果Box[i] = BoxBuff[i + 6 * 4];
-                支援範囲Box[i] = BoxBuff[i + 6 * 5];
-                爆発威力Box[i] = BoxBuff[i + 6 * 6];
-                爆発範囲Box[i] = BoxBuff[i + 6 * 7];
-                効果量Box[i] = BoxBuff[i + 6 * 8];
-                発生率Box[i] = BoxBuff[i + 6 * 9];
-                Hit数Box[i] = BoxBuff[i + 6 * 10];
+                連射Box[i] = BoxBuff[i + 6 * 3];
+                弾速Box[i] = BoxBuff[i + 6 * 4];
+                連射支援Box[i] = BoxBuff[i + 6 * 5];
+                射程支援Box[i] = BoxBuff[i + 6 * 6];
+                爆発威力Box[i] = BoxBuff[i + 6 * 7];
+                爆発範囲Box[i] = BoxBuff[i + 6 * 8];
+                効果量Box[i] = BoxBuff[i + 6 * 9];
+                発生率Box[i] = BoxBuff[i + 6 * 10];
+                Hit数Box[i] = BoxBuff[i + 6 * 11];
             }
 
             DataLoad();
@@ -131,12 +135,14 @@ namespace GTDエディタ
         {
             for (int i = 0; i < 6; ++i)
             {
-                double dps = int.Parse(攻撃力Box[i].Text) * int.Parse(速度Box[i].Text) * int.Parse(Hit数Box[i].Text) / 100;
-                double cost = double.Parse(コストBox[i].Text);
+                double dps = 攻撃力Box[i].GetValue() * 連射Box[i].GetValue() * Hit数Box[i].GetValue();
+                dps = dps * (連射支援Box[i].GetValue() + 100);
+                dps /= 1000;
+                double cost = コストBox[i].GetValue();
                 double dpc = dps / cost;
 
                 DPS表示[i].Text = dps.ToString("F0");
-                DPC表示[i].Text = dpc.ToString("F2");
+                DPC表示[i].Text = dpc.ToString("F1");
             }
         }
 
@@ -195,26 +201,27 @@ namespace GTDエディタ
             MagicS[index].名前 = 名前Box.Text;
             MagicS[index].説明 = 説明Box.Text;
             MagicS[index].属性 = 属性Box.SelectedIndex;
-            MagicS[index].判定 = int.Parse(判定Box.Text);
+            MagicS[index].判定 = 判定Box.SelectedIndex;
             MagicS[index].種類 = 種類Box.SelectedIndex;
-            MagicS[index].詠唱数 = int.Parse(詠唱数Box.Text);
+            MagicS[index].詠唱数 = Decimal.ToInt32(詠唱数Box.Value);
             MagicS[index].追加効果 = 追加効果Box.SelectedIndex;
 
             for (int i = 0; i < 6; ++i)
             {
-                MagicS[index].コスト[i] = int.Parse(コストBox[i].Text);
-                MagicS[index].攻撃力[i] = int.Parse(攻撃力Box[i].Text);
-                MagicS[index].射程[i] = int.Parse(射程Box[i].Text);
-                MagicS[index].速度[i] = int.Parse(速度Box[i].Text);
+                MagicS[index].コスト[i] = コストBox[i].GetValue();
+                MagicS[index].攻撃力[i] = 攻撃力Box[i].GetValue();
+                MagicS[index].射程[i] = 射程Box[i].GetValue();
+                MagicS[index].連射[i] = 連射Box[i].GetValue();
+                MagicS[index].弾速[i] = 弾速Box[i].GetValue();
 
-                MagicS[index].支援効果[i] = int.Parse(支援効果Box[i].Text);
-                MagicS[index].支援範囲[i] = int.Parse(支援範囲Box[i].Text);
-                MagicS[index].爆発威力[i] = int.Parse(爆発威力Box[i].Text);
-                MagicS[index].爆発範囲[i] = int.Parse(爆発範囲Box[i].Text);
+                MagicS[index].支援連射[i] = 連射支援Box[i].GetValue();
+                MagicS[index].支援射程[i] = 射程支援Box[i].GetValue();
+                MagicS[index].爆発威力[i] = 爆発威力Box[i].GetValue();
+                MagicS[index].爆発範囲[i] = 爆発範囲Box[i].GetValue();
 
-                MagicS[index].効果量[i] = int.Parse(効果量Box[i].Text);
-                MagicS[index].発生率[i] = int.Parse(発生率Box[i].Text);
-                MagicS[index].Hit数[i] = int.Parse(Hit数Box[i].Text);
+                MagicS[index].効果量[i] = 効果量Box[i].GetValue();
+                MagicS[index].発生率[i] = 発生率Box[i].GetValue();
+                MagicS[index].Hit数[i] = Hit数Box[i].GetValue();
             }
 
         }
@@ -225,31 +232,35 @@ namespace GTDエディタ
             説明Box.Text = MagicS[index].説明;
             属性Box.SelectedIndex = MagicS[index].属性;
             種類Box.SelectedIndex = MagicS[index].種類;
-            判定Box.Text = MagicS[index].判定.ToString();
-            詠唱数Box.Text = MagicS[index].詠唱数.ToString();
+            判定Box.SelectedIndex = MagicS[index].判定;
+            詠唱数Box.Value = MagicS[index].詠唱数;
             追加効果Box.SelectedIndex = MagicS[index].追加効果;
 
             for(int i=0;i<6;++i)
             {
-                コストBox[i].Text = MagicS[index].コスト[i].ToString();
-                攻撃力Box[i].Text = MagicS[index].攻撃力[i].ToString();
-                射程Box[i].Text = MagicS[index].射程[i].ToString();
-                速度Box[i].Text = MagicS[index].速度[i].ToString();
+                コストBox[i].Value = MagicS[index].コスト[i];
+                攻撃力Box[i].Value = MagicS[index].攻撃力[i];
+                射程Box[i].Value = MagicS[index].射程[i];
+                連射Box[i].Value = MagicS[index].連射[i];
+                弾速Box[i].Value = MagicS[index].弾速[i];
 
-                支援効果Box[i].Text = MagicS[index].支援効果[i].ToString();
-                支援範囲Box[i].Text = MagicS[index].支援範囲[i].ToString();
-                爆発威力Box[i].Text = MagicS[index].爆発威力[i].ToString();
-                爆発範囲Box[i].Text = MagicS[index].爆発範囲[i].ToString();
+                連射支援Box[i].Value = MagicS[index].支援連射[i];
+                射程支援Box[i].Value = MagicS[index].支援射程[i];
+                爆発威力Box[i].Value = MagicS[index].爆発威力[i];
+                爆発範囲Box[i].Value = MagicS[index].爆発範囲[i];
 
-                効果量Box[i].Text = MagicS[index].効果量[i].ToString();
-                発生率Box[i].Text = MagicS[index].発生率[i].ToString();
-                Hit数Box[i].Text = MagicS[index].Hit数[i].ToString();
+                効果量Box[i].Value = MagicS[index].効果量[i];
+                発生率Box[i].Value = MagicS[index].発生率[i];
+                Hit数Box[i].Value = MagicS[index].Hit数[i];
 
-                double dps = MagicS[index].攻撃力[i] * MagicS[index].速度[i] * MagicS[index].Hit数[i];
-                double dpc = dps / MagicS[index].コスト[i];
+                double dps = 攻撃力Box[i].GetValue() * 連射Box[i].GetValue() * Hit数Box[i].GetValue();
+                dps = dps * (連射支援Box[i].GetValue() + 100);
+                dps /= 1000;
+                double cost = コストBox[i].GetValue();
+                double dpc = dps / cost;
 
                 DPS表示[i].Text = dps.ToString("F0");
-                DPC表示[i].Text = dpc.ToString("F2");
+                DPC表示[i].Text = dpc.ToString("F1");
             }
 
         }
@@ -277,10 +288,11 @@ namespace GTDエディタ
                 LoadIntS(ref MagicS[i].コスト);
                 LoadIntS(ref MagicS[i].攻撃力);
                 LoadIntS(ref MagicS[i].射程);
-                LoadIntS(ref MagicS[i].速度);
+                LoadIntS(ref MagicS[i].連射);
+                LoadIntS(ref MagicS[i].弾速);
 
-                LoadIntS(ref MagicS[i].支援効果);
-                LoadIntS(ref MagicS[i].支援範囲);
+                LoadIntS(ref MagicS[i].支援連射);
+                LoadIntS(ref MagicS[i].支援射程);
                 LoadIntS(ref MagicS[i].爆発威力);
                 LoadIntS(ref MagicS[i].爆発範囲);
 
@@ -314,10 +326,11 @@ namespace GTDエディタ
                 SaveIntS(MagicS[i].コスト);
                 SaveIntS(MagicS[i].攻撃力);
                 SaveIntS(MagicS[i].射程);
-                SaveIntS(MagicS[i].速度);
+                SaveIntS(MagicS[i].連射);
+                SaveIntS(MagicS[i].弾速);
 
-                SaveIntS(MagicS[i].支援効果);
-                SaveIntS(MagicS[i].支援範囲);
+                SaveIntS(MagicS[i].支援連射);
+                SaveIntS(MagicS[i].支援射程);
                 SaveIntS(MagicS[i].爆発威力);
                 SaveIntS(MagicS[i].爆発範囲);
 
@@ -332,7 +345,7 @@ namespace GTDエディタ
         
         private void SaveString(string 文字列)
         {
-            byte[] byteArray = Encoding.Unicode.GetBytes( 文字列 );
+            byte[] byteArray = Encoding.UTF8.GetBytes( 文字列 );
             byte[] 文字数 = BitConverter.GetBytes(byteArray.Length);
 
             file.Write(文字数, 0, 4);
@@ -360,7 +373,7 @@ namespace GTDエディタ
 
             file.Read(byteS, 0, 文字数);
 
-            文字列 = Encoding.Unicode.GetString(byteS);
+            文字列 = Encoding.UTF8.GetString(byteS);
         }
 
         private void LoadInt(ref int 数値)
