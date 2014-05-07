@@ -309,9 +309,8 @@
             "無し"});
             this.追加効果Box.FormattingEnabled = true;
             this.追加効果Box.Items.AddRange(new object[] {
-            "パニック",
-            "眠り",
             "痺れ",
+            "眠り",
             "吹き飛ばし",
             "防御低下",
             "無し"});
