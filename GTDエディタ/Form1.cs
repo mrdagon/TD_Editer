@@ -234,6 +234,7 @@ namespace GTDエディタ
             種類Box.SelectedIndex = MagicS[index].種類;
             判定Box.SelectedIndex = MagicS[index].判定;
             詠唱数Box.Value = MagicS[index].詠唱数;
+            if (MagicS[index].追加効果 > 4) MagicS[index].追加効果 = 4;
             追加効果Box.SelectedIndex = MagicS[index].追加効果;
 
             for(int i=0;i<6;++i)

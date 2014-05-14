@@ -449,7 +449,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 608);
+            this.ClientSize = new System.Drawing.Size(567, 616);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.詠唱数Box);
             this.Controls.Add(this.判定Box);
