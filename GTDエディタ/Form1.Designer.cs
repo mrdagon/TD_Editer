@@ -42,8 +42,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.爆発 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -105,7 +103,7 @@
             this.listBox.ItemHeight = 12;
             this.listBox.Location = new System.Drawing.Point(12, 41);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(150, 556);
+            this.listBox.Size = new System.Drawing.Size(150, 496);
             this.listBox.TabIndex = 4;
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
@@ -218,28 +216,10 @@
             this.label10.TabIndex = 23;
             this.label10.Text = "連射";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(177, 316);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 12);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "連射支援";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(177, 341);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 12);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "射程支援";
-            // 
             // 爆発
             // 
             this.爆発.AutoSize = true;
-            this.爆発.Location = new System.Drawing.Point(177, 374);
+            this.爆発.Location = new System.Drawing.Point(177, 318);
             this.爆発.Name = "爆発";
             this.爆発.Size = new System.Drawing.Size(53, 12);
             this.爆発.TabIndex = 29;
@@ -248,7 +228,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(177, 399);
+            this.label14.Location = new System.Drawing.Point(177, 343);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 31;
@@ -257,7 +237,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(177, 460);
+            this.label15.Location = new System.Drawing.Point(177, 404);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 12);
             this.label15.TabIndex = 33;
@@ -266,7 +246,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(177, 485);
+            this.label16.Location = new System.Drawing.Point(177, 429);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(41, 12);
             this.label16.TabIndex = 35;
@@ -284,7 +264,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(177, 510);
+            this.label18.Location = new System.Drawing.Point(177, 460);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(32, 12);
             this.label18.TabIndex = 39;
@@ -293,7 +273,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(178, 434);
+            this.label19.Location = new System.Drawing.Point(178, 378);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(53, 12);
             this.label19.TabIndex = 41;
@@ -314,7 +294,7 @@
             "吹き飛ばし",
             "防御低下",
             "無し"});
-            this.追加効果Box.Location = new System.Drawing.Point(237, 431);
+            this.追加効果Box.Location = new System.Drawing.Point(237, 375);
             this.追加効果Box.Name = "追加効果Box";
             this.追加効果Box.Size = new System.Drawing.Size(121, 20);
             this.追加効果Box.TabIndex = 40;
@@ -322,7 +302,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(178, 543);
+            this.label20.Location = new System.Drawing.Point(178, 493);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(27, 12);
             this.label20.TabIndex = 42;
@@ -331,7 +311,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(178, 570);
+            this.label21.Location = new System.Drawing.Point(178, 520);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(28, 12);
             this.label21.TabIndex = 43;
@@ -449,7 +429,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 616);
+            this.ClientSize = new System.Drawing.Size(572, 550);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.詠唱数Box);
             this.Controls.Add(this.判定Box);
@@ -468,8 +448,6 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.爆発);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -488,6 +466,7 @@
             this.Controls.Add(this.PasteButton);
             this.Controls.Add(this.CopyButton);
             this.Controls.Add(this.SaveButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "GTDエディタ";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -513,8 +492,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label 爆発;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;

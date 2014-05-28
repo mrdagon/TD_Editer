@@ -30,8 +30,6 @@ namespace GTDエディタ
         public int[] 連射 = new int[6];
         public int[] 弾速 = new int[6];
 
-        public int[] 支援連射 = new int[6];
-        public int[] 支援射程 = new int[6];
         public int[] 爆発威力 = new int[6];
         public int[] 爆発範囲 = new int[6];
 
@@ -56,8 +54,6 @@ namespace GTDエディタ
                 射程[i] = new int();
                 連射[i] = new int();
                 弾速[i] = new int();
-                支援連射[i] = new int();
-                支援射程[i] = new int();
                 爆発威力[i] = new int();
                 爆発範囲[i] = new int();
                 効果量[i] = new int();
@@ -84,8 +80,6 @@ namespace GTDエディタ
                 射程[i] = コピー元.射程[i];
                 連射[i] = コピー元.連射[i];
                 弾速[i] = コピー元.弾速[i];
-                支援連射[i] = コピー元.支援連射[i];
-                支援射程[i] = コピー元.支援射程[i];
                 爆発威力[i] = コピー元.爆発威力[i];
                 爆発範囲[i] = コピー元.爆発範囲[i];
                 効果量[i] = コピー元.効果量[i];
