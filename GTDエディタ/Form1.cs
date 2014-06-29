@@ -39,11 +39,13 @@ namespace GTDエディタ
         NumBox[] 発生率Box = new NumBox[6];
         NumBox[] Hit数Box = new NumBox[6];
 
+        NumBox[] BoxBuff = new NumBox[6 * 12];
+
         Label[] DPS表示 = new Label[6];
         Label[] DPC表示 = new Label[6];
         Label[] SUP表示 = new Label[6];
 
-        NumBox[] BoxBuff = new NumBox[6 * 12];
+
 
         public Form1()
         {
@@ -62,9 +64,9 @@ namespace GTDエディタ
             for (int i = 0; i < 6 * 12; ++i )
             {
                 x = Box位置X + i % 6 * Box間隔;
-                if (i == 6 * 5) y = 316;
-                if (i == 6 * 7) y = 374;
-                if (i == 6 * 9) y = 460;
+                if (i == 6 * 5) y = 316;//爆発
+                if (i == 6 * 7) y = 404;//特殊効果
+                if (i == 6 * 9) y = 460;//Hit数
 
                 BoxBuff[i] = new NumBox();
                 BoxBuff[i].Size = new Size(44, 19);
@@ -129,12 +131,6 @@ namespace GTDエディタ
                 BoxBuff[i].TextChanged += new EventHandler(ChangeDPS);
             }
 
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-            
         }
 
         private void UpdateName()
