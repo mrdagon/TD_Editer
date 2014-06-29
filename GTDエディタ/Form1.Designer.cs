@@ -66,6 +66,9 @@
             this.判定Box = new System.Windows.Forms.ComboBox();
             this.詠唱数Box = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
+            this.種族特攻Box = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.詠唱数Box)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,18 +226,18 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(177, 316);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 12);
+            this.label11.Size = new System.Drawing.Size(37, 12);
             this.label11.TabIndex = 25;
-            this.label11.Text = "連射支援";
+            this.label11.Text = "支援A";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(177, 341);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 12);
+            this.label12.Size = new System.Drawing.Size(37, 12);
             this.label12.TabIndex = 27;
-            this.label12.Text = "射程支援";
+            this.label12.Text = "支援B";
             // 
             // 爆発
             // 
@@ -309,9 +312,9 @@
             "無し"});
             this.追加効果Box.FormattingEnabled = true;
             this.追加効果Box.Items.AddRange(new object[] {
-            "痺れ",
-            "眠り",
-            "吹き飛ばし",
+            "鈍足",
+            "麻痺",
+            "吹飛",
             "防御低下",
             "無し"});
             this.追加効果Box.Location = new System.Drawing.Point(237, 431);
@@ -322,7 +325,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(178, 543);
+            this.label20.Location = new System.Drawing.Point(178, 535);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(27, 12);
             this.label20.TabIndex = 42;
@@ -331,7 +334,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(178, 570);
+            this.label21.Location = new System.Drawing.Point(178, 555);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(28, 12);
             this.label21.TabIndex = 43;
@@ -445,11 +448,63 @@
             this.label13.TabIndex = 86;
             this.label13.Text = "弾速";
             // 
+            // 種族特攻Box
+            // 
+            this.種族特攻Box.AutoCompleteCustomSource.AddRange(new string[] {
+            "痺れ",
+            "眠り",
+            "吹き飛ばし",
+            "防御低下",
+            "無し"});
+            this.種族特攻Box.FormattingEnabled = true;
+            this.種族特攻Box.Items.AddRange(new object[] {
+            "ゼリー",
+            "ゴブリン",
+            "ケットシー",
+            "オーガ",
+            "コボルド",
+            "マーマン",
+            "ゴーレム",
+            "ケルベロス",
+            "スケルトン",
+            "シャーマン",
+            "ゼリー王",
+            "インプ",
+            "ゴースト",
+            "グリフィン",
+            "ドラゴン",
+            "なし"});
+            this.種族特攻Box.Location = new System.Drawing.Point(426, 431);
+            this.種族特攻Box.Name = "種族特攻Box";
+            this.種族特攻Box.Size = new System.Drawing.Size(121, 20);
+            this.種族特攻Box.TabIndex = 87;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(367, 434);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(53, 12);
+            this.label22.TabIndex = 88;
+            this.label22.Text = "種族特攻";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(178, 575);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(27, 12);
+            this.label23.TabIndex = 89;
+            this.label23.Text = "SUP";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 616);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.種族特攻Box);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.詠唱数Box);
             this.Controls.Add(this.判定Box);
@@ -537,6 +592,9 @@
         private System.Windows.Forms.ComboBox 判定Box;
         private System.Windows.Forms.NumericUpDown 詠唱数Box;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox 種族特攻Box;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
 
 
     }
