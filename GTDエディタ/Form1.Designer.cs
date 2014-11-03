@@ -74,9 +74,10 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(12, 12);
+            this.SaveButton.Location = new System.Drawing.Point(20, 18);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.Size = new System.Drawing.Size(125, 34);
             this.SaveButton.TabIndex = 1;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -84,9 +85,10 @@
             // 
             // CopyButton
             // 
-            this.CopyButton.Location = new System.Drawing.Point(373, 12);
+            this.CopyButton.Location = new System.Drawing.Point(622, 18);
+            this.CopyButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.CopyButton.Name = "CopyButton";
-            this.CopyButton.Size = new System.Drawing.Size(75, 23);
+            this.CopyButton.Size = new System.Drawing.Size(125, 34);
             this.CopyButton.TabIndex = 2;
             this.CopyButton.Text = "Copy";
             this.CopyButton.UseVisualStyleBackColor = true;
@@ -94,9 +96,10 @@
             // 
             // PasteButton
             // 
-            this.PasteButton.Location = new System.Drawing.Point(454, 12);
+            this.PasteButton.Location = new System.Drawing.Point(757, 18);
+            this.PasteButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.PasteButton.Name = "PasteButton";
-            this.PasteButton.Size = new System.Drawing.Size(75, 23);
+            this.PasteButton.Size = new System.Drawing.Size(125, 34);
             this.PasteButton.TabIndex = 3;
             this.PasteButton.Text = "Paste";
             this.PasteButton.UseVisualStyleBackColor = true;
@@ -105,10 +108,11 @@
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
-            this.listBox.ItemHeight = 12;
-            this.listBox.Location = new System.Drawing.Point(12, 41);
+            this.listBox.ItemHeight = 18;
+            this.listBox.Location = new System.Drawing.Point(20, 62);
+            this.listBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(150, 496);
+            this.listBox.Size = new System.Drawing.Size(245, 778);
             this.listBox.TabIndex = 4;
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
@@ -121,26 +125,29 @@
             "樹",
             "空",
             "無"});
-            this.属性Box.Location = new System.Drawing.Point(236, 110);
+            this.属性Box.Location = new System.Drawing.Point(393, 165);
+            this.属性Box.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.属性Box.Name = "属性Box";
-            this.属性Box.Size = new System.Drawing.Size(121, 20);
+            this.属性Box.Size = new System.Drawing.Size(199, 26);
             this.属性Box.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(177, 113);
+            this.label3.Location = new System.Drawing.Point(295, 170);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(44, 18);
             this.label3.TabIndex = 10;
             this.label3.Text = "属性";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(177, 139);
+            this.label4.Location = new System.Drawing.Point(295, 208);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.Size = new System.Drawing.Size(44, 18);
             this.label4.TabIndex = 12;
             this.label4.Text = "種類";
             // 
@@ -160,127 +167,141 @@
             "両方OK",
             "対地専用",
             "対空専用",
-            "使い捨て",
-            "支援専用"});
-            this.種類Box.Location = new System.Drawing.Point(236, 136);
+            "使い捨て"});
+            this.種類Box.Location = new System.Drawing.Point(393, 204);
+            this.種類Box.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.種類Box.Name = "種類Box";
-            this.種類Box.Size = new System.Drawing.Size(121, 20);
+            this.種類Box.Size = new System.Drawing.Size(199, 26);
             this.種類Box.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(380, 113);
+            this.label5.Location = new System.Drawing.Point(633, 170);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.Size = new System.Drawing.Size(44, 18);
             this.label5.TabIndex = 13;
             this.label5.Text = "判定";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(176, 184);
+            this.label6.Location = new System.Drawing.Point(293, 312);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 12);
+            this.label6.Size = new System.Drawing.Size(47, 18);
             this.label6.TabIndex = 16;
             this.label6.Text = "コスト";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(244, 166);
+            this.label7.Location = new System.Drawing.Point(407, 285);
+            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 12);
+            this.label7.Size = new System.Drawing.Size(38, 18);
             this.label7.TabIndex = 17;
             this.label7.Text = "LV1";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(176, 209);
+            this.label8.Location = new System.Drawing.Point(293, 350);
+            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 12);
+            this.label8.Size = new System.Drawing.Size(62, 18);
             this.label8.TabIndex = 19;
             this.label8.Text = "攻撃力";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(176, 234);
+            this.label9.Location = new System.Drawing.Point(293, 387);
+            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(29, 12);
+            this.label9.Size = new System.Drawing.Size(44, 18);
             this.label9.TabIndex = 21;
             this.label9.Text = "射程";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(176, 259);
+            this.label10.Location = new System.Drawing.Point(293, 424);
+            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 12);
+            this.label10.Size = new System.Drawing.Size(44, 18);
             this.label10.TabIndex = 23;
             this.label10.Text = "連射";
             // 
             // 爆発
             // 
             this.爆発.AutoSize = true;
-            this.爆発.Location = new System.Drawing.Point(178, 359);
+            this.爆発.Location = new System.Drawing.Point(293, 573);
+            this.爆発.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.爆発.Name = "爆発";
-            this.爆発.Size = new System.Drawing.Size(53, 12);
+            this.爆発.Size = new System.Drawing.Size(80, 18);
             this.爆発.TabIndex = 29;
             this.爆発.Text = "爆発威力";
+            this.爆発.Click += new System.EventHandler(this.爆発_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(178, 384);
+            this.label14.Location = new System.Drawing.Point(297, 610);
+            this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 12);
+            this.label14.Size = new System.Drawing.Size(80, 18);
             this.label14.TabIndex = 31;
             this.label14.Text = "爆発範囲";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(175, 454);
+            this.label15.Location = new System.Drawing.Point(294, 647);
+            this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 12);
+            this.label15.Size = new System.Drawing.Size(62, 18);
             this.label15.TabIndex = 33;
             this.label15.Text = "効果量";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(175, 479);
+            this.label16.Location = new System.Drawing.Point(294, 684);
+            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 12);
+            this.label16.Size = new System.Drawing.Size(62, 18);
             this.label16.TabIndex = 35;
             this.label16.Text = "発生率";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(380, 140);
+            this.label17.Location = new System.Drawing.Point(633, 210);
+            this.label17.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 12);
+            this.label17.Size = new System.Drawing.Size(62, 18);
             this.label17.TabIndex = 36;
             this.label17.Text = "詠唱数";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(175, 510);
+            this.label18.Location = new System.Drawing.Point(294, 721);
+            this.label18.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(32, 12);
+            this.label18.Size = new System.Drawing.Size(48, 18);
             this.label18.TabIndex = 39;
             this.label18.Text = "Hit数";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(176, 428);
+            this.label19.Location = new System.Drawing.Point(294, 247);
+            this.label19.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(53, 12);
+            this.label19.Size = new System.Drawing.Size(80, 18);
             this.label19.TabIndex = 41;
             this.label19.Text = "追加効果";
             // 
@@ -299,106 +320,119 @@
             "吹飛",
             "防御低下",
             "無し"});
-            this.追加効果Box.Location = new System.Drawing.Point(235, 425);
+            this.追加効果Box.Location = new System.Drawing.Point(393, 243);
+            this.追加効果Box.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.追加効果Box.Name = "追加効果Box";
-            this.追加効果Box.Size = new System.Drawing.Size(121, 20);
+            this.追加効果Box.Size = new System.Drawing.Size(199, 26);
             this.追加効果Box.TabIndex = 40;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(178, 535);
+            this.label20.Location = new System.Drawing.Point(300, 757);
+            this.label20.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(27, 12);
+            this.label20.Size = new System.Drawing.Size(42, 18);
             this.label20.TabIndex = 42;
             this.label20.Text = "DPS";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(178, 555);
+            this.label21.Location = new System.Drawing.Point(300, 787);
+            this.label21.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(28, 12);
+            this.label21.Size = new System.Drawing.Size(43, 18);
             this.label21.TabIndex = 43;
             this.label21.Text = "DPC";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(286, 166);
+            this.label24.Location = new System.Drawing.Point(477, 285);
+            this.label24.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(25, 12);
+            this.label24.Size = new System.Drawing.Size(38, 18);
             this.label24.TabIndex = 47;
             this.label24.Text = "LV2";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(338, 166);
+            this.label25.Location = new System.Drawing.Point(563, 285);
+            this.label25.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(25, 12);
+            this.label25.Size = new System.Drawing.Size(38, 18);
             this.label25.TabIndex = 56;
             this.label25.Text = "LV3";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(389, 166);
+            this.label26.Location = new System.Drawing.Point(648, 285);
+            this.label26.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(25, 12);
+            this.label26.Size = new System.Drawing.Size(38, 18);
             this.label26.TabIndex = 65;
             this.label26.Text = "LV4";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(441, 166);
+            this.label27.Location = new System.Drawing.Point(735, 285);
+            this.label27.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(25, 12);
+            this.label27.Size = new System.Drawing.Size(38, 18);
             this.label27.TabIndex = 74;
             this.label27.Text = "LV5";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(493, 166);
+            this.label28.Location = new System.Drawing.Point(822, 285);
+            this.label28.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(25, 12);
+            this.label28.Size = new System.Drawing.Size(38, 18);
             this.label28.TabIndex = 83;
             this.label28.Text = "LV6";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(177, 41);
+            this.label1.Location = new System.Drawing.Point(294, 51);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.Size = new System.Drawing.Size(44, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "名前";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(177, 66);
+            this.label2.Location = new System.Drawing.Point(295, 84);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(44, 18);
             this.label2.TabIndex = 7;
             this.label2.Text = "説明";
             // 
             // 名前Box
             // 
-            this.名前Box.Location = new System.Drawing.Point(236, 38);
+            this.名前Box.Location = new System.Drawing.Point(393, 48);
+            this.名前Box.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.名前Box.Name = "名前Box";
-            this.名前Box.Size = new System.Drawing.Size(121, 19);
+            this.名前Box.Size = new System.Drawing.Size(199, 25);
             this.名前Box.TabIndex = 6;
+            this.名前Box.TextChanged += new System.EventHandler(this.名前Box_TextChanged);
             // 
             // 説明Box
             // 
             this.説明Box.AcceptsReturn = true;
-            this.説明Box.Location = new System.Drawing.Point(236, 63);
+            this.説明Box.Location = new System.Drawing.Point(393, 81);
+            this.説明Box.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.説明Box.Multiline = true;
             this.説明Box.Name = "説明Box";
-            this.説明Box.Size = new System.Drawing.Size(311, 41);
+            this.説明Box.Size = new System.Drawing.Size(198, 73);
             this.説明Box.TabIndex = 8;
             // 
             // 判定Box
@@ -409,26 +443,30 @@
             "四角",
             "十字-幅2",
             "十字-幅4"});
-            this.判定Box.Location = new System.Drawing.Point(426, 111);
+            this.判定Box.Location = new System.Drawing.Point(710, 166);
+            this.判定Box.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.判定Box.Name = "判定Box";
-            this.判定Box.Size = new System.Drawing.Size(121, 20);
+            this.判定Box.Size = new System.Drawing.Size(199, 26);
             this.判定Box.TabIndex = 84;
             // 
             // 詠唱数Box
             // 
-            this.詠唱数Box.Location = new System.Drawing.Point(427, 138);
+            this.詠唱数Box.Location = new System.Drawing.Point(712, 207);
+            this.詠唱数Box.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.詠唱数Box.Name = "詠唱数Box";
-            this.詠唱数Box.Size = new System.Drawing.Size(120, 19);
+            this.詠唱数Box.Size = new System.Drawing.Size(200, 25);
             this.詠唱数Box.TabIndex = 85;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(176, 284);
+            this.label13.Location = new System.Drawing.Point(293, 462);
+            this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 12);
+            this.label13.Size = new System.Drawing.Size(44, 18);
             this.label13.TabIndex = 86;
             this.label13.Text = "弾速";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // 種族特攻Box
             // 
@@ -445,63 +483,69 @@
             "ケットシー",
             "オーガ",
             "コボルド",
-            "マーマン",
             "ゴーレム",
             "ケルベロス",
             "スケルトン",
             "シャーマン",
             "ゼリー王",
+            "マーマン",
             "インプ",
-            "ゴースト",
+            "ロボット",
             "グリフィン",
             "ドラゴン",
             "なし"});
-            this.種族特攻Box.Location = new System.Drawing.Point(424, 425);
+            this.種族特攻Box.Location = new System.Drawing.Point(710, 243);
+            this.種族特攻Box.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.種族特攻Box.Name = "種族特攻Box";
-            this.種族特攻Box.Size = new System.Drawing.Size(121, 20);
+            this.種族特攻Box.Size = new System.Drawing.Size(199, 26);
             this.種族特攻Box.TabIndex = 87;
+            this.種族特攻Box.SelectedIndexChanged += new System.EventHandler(this.種族特攻Box_SelectedIndexChanged);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(366, 428);
+            this.label22.Location = new System.Drawing.Point(611, 247);
+            this.label22.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(53, 12);
+            this.label22.Size = new System.Drawing.Size(80, 18);
             this.label22.TabIndex = 88;
             this.label22.Text = "種族特攻";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(178, 575);
+            this.label23.Location = new System.Drawing.Point(300, 817);
+            this.label23.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(27, 12);
+            this.label23.Size = new System.Drawing.Size(42, 18);
             this.label23.TabIndex = 89;
             this.label23.Text = "SUP";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(178, 309);
+            this.label11.Location = new System.Drawing.Point(293, 499);
+            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 12);
+            this.label11.Size = new System.Drawing.Size(55, 18);
             this.label11.TabIndex = 90;
             this.label11.Text = "支援A";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(179, 330);
+            this.label12.Location = new System.Drawing.Point(293, 536);
+            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 12);
+            this.label12.Size = new System.Drawing.Size(55, 18);
             this.label12.TabIndex = 91;
             this.label12.Text = "支援B";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 616);
+            this.ClientSize = new System.Drawing.Size(942, 853);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label23);
@@ -543,8 +587,9 @@
             this.Controls.Add(this.PasteButton);
             this.Controls.Add(this.CopyButton);
             this.Controls.Add(this.SaveButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "GTDエディタ";
             ((System.ComponentModel.ISupportInitialize)(this.詠唱数Box)).EndInit();
             this.ResumeLayout(false);

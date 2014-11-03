@@ -59,14 +59,11 @@ namespace GTDエディタ
             }
 
             int x = 0;
-            int y = 181;
+            int y = 205;
 
             for (int i = 0; i < 6 * 12; ++i )
             {
                 x = Box位置X + i % 6 * Box間隔;
-                if (i == 6 * 5) y = 316;//爆発
-                if (i == 6 * 7) y = 404;//特殊効果
-                if (i == 6 * 9) y = 460;//Hit数
 
                 BoxBuff[i] = new NumBox();
                 BoxBuff[i].Size = new Size(44, 19);
@@ -90,9 +87,9 @@ namespace GTDエディタ
                 DPC表示[i].Size = new Size(44, 19);
                 SUP表示[i].Size = new Size(44, 19);
 
-                DPS表示[i].Location = new Point(Box位置X + i * Box間隔, 535);
-                DPC表示[i].Location = new Point(Box位置X + i * Box間隔, 555);
-                SUP表示[i].Location = new Point(Box位置X + i * Box間隔, 575);
+                DPS表示[i].Location = new Point(Box位置X + i * Box間隔, 505);
+                DPC表示[i].Location = new Point(Box位置X + i * Box間隔, 525);
+                SUP表示[i].Location = new Point(Box位置X + i * Box間隔, 545);
 
                 Controls.Add(DPS表示[i]);
                 Controls.Add(DPC表示[i]);
@@ -412,6 +409,27 @@ namespace GTDエディタ
                 数値[i] = BitConverter.ToInt32(byteS, 0);
             }
         }
-    
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 爆発_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 種族特攻Box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 名前Box_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+   
     }
 }
