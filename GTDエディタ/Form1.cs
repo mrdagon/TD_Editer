@@ -13,7 +13,7 @@ namespace GTDエディタ
 {
     public partial class Form1 : Form
     {
-        const int 魔法数 = 80;//共通20 + 専用 5×12
+        const int 魔法数 = 80;//必要数より多めにとっている
         const int Box位置X = 236;
         const int Box間隔 = 52;
         string fileName;
@@ -44,8 +44,6 @@ namespace GTDエディタ
         Label[] DPS表示 = new Label[6];
         Label[] DPC表示 = new Label[6];
         Label[] SUP表示 = new Label[6];
-
-
 
         public Form1()
         {
