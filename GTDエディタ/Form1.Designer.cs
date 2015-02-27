@@ -244,9 +244,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(176, 431);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 12);
+            this.label15.Size = new System.Drawing.Size(53, 12);
             this.label15.TabIndex = 33;
-            this.label15.Text = "効果量";
+            this.label15.Text = "効果時間";
             // 
             // label16
             // 
@@ -264,7 +264,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 12);
             this.label17.TabIndex = 36;
-            this.label17.Text = "詠唱数";
+            this.label17.Text = "強化数";
             // 
             // label18
             // 
@@ -406,10 +406,8 @@
             // 
             this.判定Box.FormattingEnabled = true;
             this.判定Box.Items.AddRange(new object[] {
-            "円形",
-            "四角",
-            "十字-幅2",
-            "十字-幅4"});
+            "円",
+            "十字"});
             this.判定Box.Location = new System.Drawing.Point(426, 111);
             this.判定Box.Name = "判定Box";
             this.判定Box.Size = new System.Drawing.Size(121, 20);
@@ -442,21 +440,12 @@
             "無し"});
             this.種族特攻Box.FormattingEnabled = true;
             this.種族特攻Box.Items.AddRange(new object[] {
-            "ゼリー",
-            "ゴブリン",
-            "ケットシー",
-            "オーガ",
-            "コボルド",
-            "ゴーレム",
-            "ケルベロス",
-            "スケルトン",
-            "シャーマン",
-            "ゼリー王",
-            "マーマン",
-            "インプ",
-            "ロボット",
-            "グリフィン",
-            "ドラゴン",
+            "竜",
+            "獣",
+            "亜人",
+            "闇",
+            "水棲",
+            "自然",
             "なし"});
             this.種族特攻Box.Location = new System.Drawing.Point(426, 162);
             this.種族特攻Box.Name = "種族特攻Box";
@@ -487,18 +476,18 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(176, 333);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 12);
+            this.label11.Size = new System.Drawing.Size(29, 12);
             this.label11.TabIndex = 90;
-            this.label11.Text = "支援A";
+            this.label11.Text = "支援";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(176, 357);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 12);
+            this.label12.Size = new System.Drawing.Size(41, 12);
             this.label12.TabIndex = 91;
-            this.label12.Text = "支援B";
+            this.label12.Text = "射程幅";
             // 
             // Form1
             // 
